@@ -1,0 +1,21 @@
+<div>
+  <h4>Credit Cards</h4>
+  <table class="blueTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Card Number</th>
+        <th>Balance</th>
+        <th>Limit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let card of cards">
+        <td>{{card.name}}</td>
+        <td>{{card.ccNumber}}</td>
+        <td>{{card.creditBalance}}£</td>
+        <td>{{card.creditLimit}}£</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

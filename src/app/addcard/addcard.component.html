@@ -1,0 +1,27 @@
+<div class="col-md-6">
+  <h2 class="text-left">Add Card</h2>
+  <form [formGroup]='addForm' (ngSubmit)="onSubmit(addForm.value)">
+    <div class="md-form">
+      <input formControlName="name" placeholder="Name" name="name" class="form-control" id="name">
+      <div class="alert" *ngIf="!addForm.controls['name'].valid && addForm.controls['name'].touched">
+          <span class="inlineerror">Enter valid name</span></div>
+    </div>
+    <br>
+    <div class="md-form">
+      <input formControlName="ccNumber" placeholder="Credit Card Number" name="ccNumber" class="form-control" id="ccNumber">
+      <div class="alert" *ngIf="!addForm.controls['ccNumber'].valid && addForm.controls['ccNumber'].touched">
+            <span class="inlineerror">Enter valid Card Number</span></div>
+    </div>
+    <br>
+    <div class="md-form">
+      <input formControlName="creditLimit" placeholder="Credit Card Limit" name="creditLimit" class="form-control" id="creditLimit">
+      <div class="alert" *ngIf="!addForm.controls['creditLimit'].valid && addForm.controls['creditLimit'].touched">
+            <span class="inlineerror">Enter Limit</span></div>
+    </div>
+    <br>
+    <div>
+      <input type="submit" class="btn btn-success button" value="Add" [disabled]="!addForm.valid">
+    </div>
+  </form>
+</div>
+
