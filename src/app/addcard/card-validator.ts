@@ -21,10 +21,8 @@ export function cardValidator(control: AbstractControl) {
         }
         var isValid = ((evenSum + oddSum) % 10) == 0;
         if (!isValid) {
-            return {
-                isError: true
-            }
+            return Promise.reject(false);
         }
     }
-    return null;
+    return Promise.resolve();
 }
